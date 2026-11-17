@@ -7,7 +7,7 @@
 </p>
 
 ## Team links
-- [Team Google Drive](https://drive.google.com/drive/folders/18hj7UzWaYRHKyD4bCQZlHjeqAHzE-pgK?usp=sharing)
+- [Team Google Drive]()
 - [Team Board]()
 
 ## Python setup (laptop)
