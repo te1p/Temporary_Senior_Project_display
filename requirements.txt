@@ -1,0 +1,21 @@
+# Python packages for the laptop side of Robot Duels:
+# vision/aruco/ (tag detection, field mapping, recording), pipeline/ (go_to_point.py, D* Lite),
+# and dstar_lite_planner.py. laptop/robot_client.py needs only the standard library.
+#
+#   python3 -m venv .venv
+#   source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Needs Python 3.10 or newer (reportlab refuses 3.9, which is macOS's built-in python3).
+# Tested with Python 3.12 and 3.14 (opencv-python 4.12 and 4.14, numpy 2.2 and 2.5, reportlab 5.0 and 5.1).
+
+# OpenCV with ArUco built in. 4.7+ is needed for cv2.aruco.ArucoDetector. Kept below 5
+# so everyone runs the same major version the code was tested on.
+# Use opencv-python, not opencv-python-headless (the tools open windows), and don't
+# install opencv-contrib-python alongside it: the two packages overwrite each other.
+opencv-python>=4.7,<5
+
+numpy>=1.24
+
+# Only for vision/aruco/generate_markers.py (printable tag PDF).
+reportlab>=3.6

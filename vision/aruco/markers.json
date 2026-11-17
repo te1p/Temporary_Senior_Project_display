@@ -1,0 +1,65 @@
+{
+  "dictionary": "DICT_4X4_50",
+  "size_note": "size_mm is the side of the black square only (not the white margin). Measure your prints and correct these values if the printer scaled them.",
+  "front_offset_note": "front_offset_deg (robots only, default 0): robot heading = tag heading + this. 180 means the robot drives toward the tag's back edge. pipeline/go_to_point.py --check prints the value to use.",
+  "field": {
+    "width_mm": 903,
+    "height_mm": 730,
+    "frame": "Top-down from the overhead camera, blue half on the left. Origin at the top-left corner, x to the right, y down. field_xy_mm values are nominal: measure where each anchor's center actually sits and update them."
+  },
+  "groups": {
+    "anchor": "Fixed field markers for the pixel-to-field mapping. Any 4 visible are enough, so the 2 center-line markers cover corners that robots block.",
+    "robot": "One per robot, flat on top. The marker's top edge (the FRONT arrow) points the way the robot drives forward.",
+    "puck": "One per puck, flat on top. Optional: pucks only need counting by side, so color detection may work better on small pucks.",
+    "spare": "Replacements for damaged markers. Do not put a spare in play while the marker it replaces is also in view.",
+    "test": "Size-test strip: hold it at the far end of the field to find the smallest size your camera can read."
+  },
+  "markers": [
+    {"id": 0,  "group": "anchor", "label": "Corner, top-left (blue half)",     "size_mm": 139.7, "field_xy_mm": [0, 0]},
+    {"id": 1,  "group": "anchor", "label": "Corner, top-right (orange half)",  "size_mm": 139.7, "field_xy_mm": [903, 0]},
+    {"id": 2,  "group": "anchor", "label": "Corner, bottom-right (orange half)", "size_mm": 139.7, "field_xy_mm": [903, 730]},
+    {"id": 3,  "group": "anchor", "label": "Corner, bottom-left (blue half)",  "size_mm": 139.7, "field_xy_mm": [0, 730]},
+    {"id": 4,  "group": "anchor", "label": "Center line, top end",             "size_mm": 139.7, "field_xy_mm": [452, 0]},
+    {"id": 5,  "group": "anchor", "label": "Center line, bottom end",          "size_mm": 139.7, "field_xy_mm": [452, 730]},
+
+    {"id": 10, "group": "robot", "label": "Blue robot 1",   "size_mm": 69.85, "front_offset_deg": 180},
+    {"id": 11, "group": "robot", "label": "Blue robot 2",   "size_mm": 69.85},
+    {"id": 12, "group": "robot", "label": "Blue robot 3",   "size_mm": 69.85},
+    {"id": 13, "group": "robot", "label": "Blue robot 4",   "size_mm": 69.85},
+    {"id": 20, "group": "robot", "label": "Orange robot 1", "size_mm": 69.85},
+    {"id": 21, "group": "robot", "label": "Orange robot 2", "size_mm": 69.85},
+    {"id": 22, "group": "robot", "label": "Orange robot 3", "size_mm": 69.85},
+    {"id": 23, "group": "robot", "label": "Orange robot 4", "size_mm": 69.85},
+
+    {"id": 30, "group": "puck", "label": "Puck 1", "size_mm": 50.8},
+    {"id": 31, "group": "puck", "label": "Puck 2", "size_mm": 50.8},
+    {"id": 32, "group": "puck", "label": "Puck 3", "size_mm": 50.8},
+    {"id": 33, "group": "puck", "label": "Puck 4", "size_mm": 50.8},
+    {"id": 34, "group": "puck", "label": "Puck 5", "size_mm": 50.8},
+    {"id": 35, "group": "puck", "label": "Puck 6", "size_mm": 50.8},
+    {"id": 36, "group": "puck", "label": "Puck 7", "size_mm": 50.8},
+    {"id": 37, "group": "puck", "label": "Puck 8", "size_mm": 50.8},
+    {"id": 38, "group": "puck", "label": "Puck 9", "size_mm": 50.8},
+
+    {"id": 14, "group": "spare", "label": "Spare blue robot",   "size_mm": 69.85},
+    {"id": 15, "group": "spare", "label": "Spare blue robot",   "size_mm": 69.85},
+    {"id": 24, "group": "spare", "label": "Spare orange robot", "size_mm": 69.85},
+    {"id": 25, "group": "spare", "label": "Spare orange robot", "size_mm": 69.85},
+    {"id": 39, "group": "spare", "label": "Spare puck",         "size_mm": 50.8},
+
+    {"id": 44, "group": "test", "label": "Size test 1.0 in", "size_mm": 25.4},
+    {"id": 45, "group": "test", "label": "Size test 1.5 in", "size_mm": 38.1},
+    {"id": 46, "group": "test", "label": "Size test 2.0 in", "size_mm": 50.8},
+    {"id": 47, "group": "test", "label": "Size test 2.5 in", "size_mm": 63.5},
+    {"id": 48, "group": "test", "label": "Size test 3.0 in", "size_mm": 76.2},
+    {"id": 49, "group": "test", "label": "Size test 4.0 in", "size_mm": 101.6}
+  ],
+  "calibration_board": {
+    "dictionary": "DICT_5X5_100",
+    "squares_x": 7,
+    "squares_y": 9,
+    "square_mm": 25.0,
+    "marker_mm": 18.0,
+    "note": "Uses a different dictionary so the game detector never mistakes it for field markers. Measure the printed squares and use the measured sizes."
+  }
+}
